@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Autos GT - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>SUPER AUTOS GT</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="flash-message {{ category }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form class="login-form" action="/login" method="POST">
+            <input type="text" name="usuario" placeholder="usuario" required>
+            <input type="password" name="contraseña" placeholder="contraseña" required>
+            <button type="submit">LOGIN</button>
+        </form>
+    </div>
+</body>
+
+</html>

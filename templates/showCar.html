@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autos Registrados - Super Autos GT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="autos-container">
+        <h1>AUTOS REGISTRADOS</h1>
+        <table class="auto-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Sobre el auto</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for auto in autos %}
+                <tr>
+                    <td><img src="{{ auto.imagen_url }}" alt="Auto" class="auto-img"></td>
+                    <td>
+                        <p>Placa: {{ auto.placa }}</p>
+                        <p>Marca: {{ auto.marca }}</p>
+                        <p>Modelo: {{ auto.modelo }}</p>
+                        <p>Precio: Q {{ auto.precio_unitario }}</p>
+                        <p>Descripción: {{ auto.descripcion }}</p>
+                    </td>
+                    <td>{{ auto.cantidad }}</td>
+                    <td>
+                        <form action="{{ url_for('eliminar_auto', placa=auto.placa) }}" method="POST">
+                            <button type="submit" class="eliminar-btn">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('crea_auto') }}" class="btn">Agregar Auto</a>
+    </div>
+</body>
+
+</html>

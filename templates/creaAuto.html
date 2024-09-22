@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Autos GT - Agregar Auto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>AGREGAR AUTO</h1>
+
+        {% with messages = get_flashed_messages(category_filter=["error"]) %}
+        {% if messages %}
+        {% for message in messages %}
+        {% if "Ya existe un auto con esta placa" in message %}
+        <div class="alert alert-error">{{ message }}</div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <form class="form-container" action="/creaAuto" method="POST">
+            <div class="form-grid">
+                <div>
+                    <label for="placa">Placa:</label>
+                    <input type="text" id="placa" name="placa" required>
+                </div>
+                <div class="full-width">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" required></textarea>
+                </div>
+                <div>
+                    <label for="marca">Marca:</label>
+                    <input type="text" id="marca" name="marca" required>
+                </div>
+                <div>
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" name="modelo" required>
+                </div>
+                <div>
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" name="precio" step="0.01" required>
+                </div>
+                <div>
+                    <label for="url_imagen">URL Imagen:</label>
+                    <input type="url" id="url_imagen" name="url_imagen" required>
+                </div>
+                <div>
+                    <label for="cantidad">Cantidad disp.:</label>
+                    <input type="number" id="cantidad" name="cantidad" required>
+                </div>
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</body>
+
+</html>
