@@ -17,7 +17,7 @@ def Sesion():
 def login_post():
     usuario = request.form.get("usuario")
     contrasena = request.form.get("contraseña")
-    if usuario == "empleado" and contrasena == "super":
+    if usuario == "empleado" and contrasena == "$uper4utos#":
         return redirect(url_for("inicio"))
     else:
         flash("Usuario o contraseña incorrectos", "error")
