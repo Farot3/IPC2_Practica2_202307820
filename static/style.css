@@ -164,6 +164,27 @@ button:hover {
     background-color: #f2f2f2;
 }
 
+.cantidad-celda {
+    font-size: 10em;
+    /* Aumenta el tamaño de la fuente */
+    font-weight: bold;
+    /* Hace el texto más grueso */
+    text-align: center;
+    /* Centra el texto en la celda */
+    vertical-align: middle;
+    /* Alinea verticalmente el texto en el medio */
+    min-width: 80px;
+    /* Asegura un ancho mínimo para la celda */
+    height: 100%;
+    /* Hace que la celda ocupe toda la altura de la fila */
+    display: flex;
+    /* Usa flexbox para centrar el contenido */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+}
+
 .auto-img {
     width: 100px;
     height: auto;

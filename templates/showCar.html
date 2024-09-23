@@ -31,7 +31,7 @@
                         <p>Precio: Q {{ auto.precio_unitario }}</p>
                         <p>Descripción: {{ auto.descripcion }}</p>
                     </td>
-                    <td>{{ auto.cantidad }}</td>
+                    <td class="cantidad-celda">{{ auto.cantidad }}</td>
                     <td>
                         <form action="{{ url_for('eliminar_auto', placa=auto.placa) }}" method="POST">
                             <button type="submit" class="eliminar-btn">Eliminar</button>
