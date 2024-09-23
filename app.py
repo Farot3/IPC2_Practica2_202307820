@@ -39,6 +39,7 @@ def crea_auto():
                 "Error: Ya existe un auto con esta placa. Por favor, use una placa diferente o elimine el auto existente.",
                 "error",
             )
+            session["flash_time"] = time.time() + 3
             return redirect(url_for("crea_auto"))
         marca = request.form.get("marca")
         modelo = request.form.get("modelo")
