@@ -50,6 +50,25 @@ button {
     margin-right: auto;
 }
 
+.button3 {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #19c21f;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button3:hover {
+    background-color: #044207;
+}
+
 button:hover {
     background-color: #81c784;
 }
